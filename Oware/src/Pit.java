@@ -5,8 +5,9 @@ public class Pit
 
 	public Pit()
 	{
-
+		
 	}
+	
 
 	public int getNumSeeds()
 	{
@@ -18,13 +19,5 @@ public class Pit
 		this.numSeeds = num;
 	}
 
-	public static void main(String[] args)
-	{
-		// test the Pit...
-
-		Pit test = new Pit();
-		test.setNumSeeds(4);
-
-	}
 
 }
