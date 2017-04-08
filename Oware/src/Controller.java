@@ -16,8 +16,6 @@ public class Controller
 
 	public Move makeMoveForCupNumber(int pitNumber)
 	{
-		active = Board.getPit(pitNumber);
-
 		return new Move();
 	}
 
