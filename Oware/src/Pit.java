@@ -2,6 +2,8 @@
 public class Pit
 {
 	private int numSeeds;
+	private Pit next; 
+	private Pit previous; 
 
 	public Pit()
 	{
