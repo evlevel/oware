@@ -1,7 +1,7 @@
 
 public class Board
 {
-	private Pit[] allPits; 
+	private static  Pit[] allPits; 
 	
 	public Board()
 	{
@@ -9,10 +9,11 @@ public class Board
 		
 		for(int i = 0; i<12; i++)
 		{
-			allPits[i]= new Pit();
+			allPits[i]= new Pit(i);
+
 		}
-		
-		for (int i= 0; i< 12; i++){
+			for (int i= 0; i< 12; i++){
+
 			allPits[i].setNext(allPits[(i+1)%12]);
 			allPits[i].setPrevious(allPits[(12+i-1)%12]);
 		}
@@ -23,11 +24,14 @@ public class Board
 	{
 		// TODO Auto-generated method stub
 
-	}
+	
+}
+
 
 	public static Pit getPit(int pitnum)
 	{
-		return allPits[pitnum];
+		return allPits[11];
 	}
 
 }
+	

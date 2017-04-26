@@ -35,6 +35,7 @@ public class Controller
 		{
 			active = active.getNext();
 			StdOut.println("Processing next pit =>"+active.getPitNumber());
+			
 			active.sowOneSeed();
 			StdOut.println("Sowing one seed to it, giving its new count as :"+ active.getNumSeeds());
 			numSeeds--;

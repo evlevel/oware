@@ -6,7 +6,7 @@ public class Pit
 	private Pit previous; 
 	private int pitNumber;
 
-	public Pit()
+	public Pit(int pnum)
 	{
 		numSeeds= 4;
 		pitNumber = pnum;
@@ -18,6 +18,18 @@ public class Pit
 	public int getNumSeeds()
 	{
 		return this.numSeeds;
+	}
+	public void setNext(Pit p){
+		next= p;
+	}
+	public Pit getNext(){
+		return next;
+	}
+	public Pit getPrevious(){
+		return previous;
+	}
+	public int getPitNumber(){
+		return pitNumber;
 	}
 	public int getAllSeed(){
 		int temp = numSeeds;
@@ -38,7 +50,7 @@ public class Pit
 	{
 		// test the Pit...
 
-		Pit test = new Pit();
+		Pit test = new Pit(12);
 		test.setNumSeeds(4);
 
 	}

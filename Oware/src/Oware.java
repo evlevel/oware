@@ -10,6 +10,7 @@ public class Oware
 		StdOut.println("https://github.com/evlevel/oware repo");
 		StdOut.println("into their own GitHub clone...");
 		StdOut.println("Intializating...");
+		
 		board = new Board(); 
 		controller= new Controller (board);
 		StdOut.println("make a move with pit 0");
