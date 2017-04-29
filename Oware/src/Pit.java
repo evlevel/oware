@@ -56,6 +56,12 @@ public class Pit
 		return temp;
 	}
 	
+	public void emptyPit()
+	{
+		// Sometimes we want to only empty house
+		numSeeds = 0;
+	}
+	
 	public void sowOneSeed()
 	{
 		numSeeds++;
