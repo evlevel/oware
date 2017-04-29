@@ -34,7 +34,7 @@ class Harvest
           
 					if (seedsInPit == 2 || seedsInPit == 3)
 					{
-						player.addSeedsToOppontStorehouse(seedsInPit);
+						player.addSeedsToOpponentStorehouse(seedsInPit);
 						pitToEmpty.emptyPit();
             					pitToEmpty = pitToEmpty.getPrevious();
 					}
