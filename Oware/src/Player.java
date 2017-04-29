@@ -18,7 +18,7 @@ public class Player
 		return playerStorehouse;
 	}
 	
-	public void setPlayerStorehouse(int s)
+	public void addSeedsToPlayerStorehouse(int s)
 	{
 		playerStorehouse += s;
 	}
@@ -28,7 +28,7 @@ public class Player
 		return opponentStorehouse;
 	}
 	
-	public void setOpponentStorehouse(int s)
+	public void addSeedsToOpponentStorehouse(int s)
 	{
 		opponentStorehouse += s;
 	}
