@@ -20,16 +20,14 @@ public class Board
 
 	}
 
-
-	public static void main(String[] args)
-	{
-		// TODO Auto-generated method stub
-
-	}
-
 	public Pit getPit(int pitnum)
 	{
 		return allPits[pitnum];
+	}
+	
+	public Pit[] getAllPits()
+	{
+		return allPits;
 	}
 
 }
