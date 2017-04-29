@@ -56,23 +56,26 @@ public class Pit
 		int seedsToSow = this.numSeeds;
 		StdOut.println("Sowing " + seedsToSow + " seeds.");
 		this.numSeeds = 0;
-		return this.nextPit.sowSeed(seedsToSow);
+		return this.nextPit.sowSeed(this.ID, seedsToSow);
 	}
 	
 	/**
 	 * sows one seed in a recursive wa
 	 * @return the pit number of the last pit.
 	 */
-	private int sowSeed(int seedsToSow){
-		this.numSeeds++;
- 
-		if (seedsToSow ==1) {
-			return this.ID;
-		} else {
-			StdOut.println("Processing next pit=> " + this.nextPit.getID());
-			return this.nextPit.sowSeed(--seedsToSow);
+	private int sowSeed(int startID, int seedsToSow)
+	{
+		if(startID == this.ID)
+		{
+			return this.nextPit.sowSeed(startID, seedsToSow);
 		}
-		
+		this.numSeeds++;
+		if (seedsToSow == 1) {
+			return this.ID;
+		} else{
+			StdOut.println("Processing next pit=> " + this.nextPit.getID());
+			return this.nextPit.sowSeed(startID, --seedsToSow);
+		}
 	}
 
 	public static void main(String[] args)
