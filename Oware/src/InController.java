@@ -8,7 +8,7 @@ class InController
 		Scanner input = new Scanner(System.in);
 		int choice = 0;
 		
-		if (player.getWhichPlayer())
+		if (player.getWhichPlayer()) // For player choosing from pits 1 - 6
 		{
 			while (true)
 			{
@@ -37,7 +37,7 @@ class InController
 					break;
 			}
 		}
-		else
+		else // For player choosing from pits 7 - 12
 		{
 			while (true)
 			{
