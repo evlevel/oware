@@ -1,6 +1,6 @@
 class Harvest
 {
-	public void harvest(Pit pitToEmpty, Player player, Pit[] pits)
+	public void harvest(Pit pitToEmpty, Player player)
 	{
 		if (player.getWhichPlayer())
 		{
@@ -36,7 +36,7 @@ class Harvest
 					{
 						player.addSeedsToOppontStorehouse(seedsInPit);
 						pitToEmpty.emptyPit();
-            pitToEmpty = pitToEmpty.getPrevious();
+            					pitToEmpty = pitToEmpty.getPrevious();
 					}
         
 				  else
