@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 class InController
 {
-	public int chooseHouse(Player player, Pit[] pits) throws Exception // Catching a input other than a number between 1 - 12
+	public int choosePit(Player player, Pit[] pits) throws Exception // Catching a input other than a number between 1 - 12
 	{
 		Scanner input = new Scanner(System.in);
 		int choice = 0;
