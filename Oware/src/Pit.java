@@ -66,14 +66,5 @@ public class Pit
 	{
 		numSeeds++;
 	}
-	
-	public static void main(String[] args)
-	{
-		// test the Pit...
-
-		Pit test = new Pit(0);
-		test.setNumSeeds(4);
-
-	}
 
 }
