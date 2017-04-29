@@ -9,7 +9,7 @@ public class Oware
 	private static Harvest doHarvest;
 	private static Move doSow;
 	
-	public static void main(String[] args)
+	public static void main(String[] args) throws Exception
 	{
 		StdOut.println("Welcome to Oware.");
 		StdOut.println("Each student will fork the starting");
@@ -19,7 +19,7 @@ public class Oware
 		StdOut.println("Initializing...");
 		
 		initialize();
-		pits = board.getPits();
+		pits = board.getAllPits();
 		
 		System.out.println("            Oware Game 1.0");
 		System.out.println("-------------------------------------------\n");
@@ -27,9 +27,9 @@ public class Oware
 		
 		while (!haveWinner)
 		{
-			int pitChoice = choices.chooseHouse(player, pits);
+			int pitChoice = choices.choosePit(player, pits);
 			
-			doHarvest.harvest(doSow.move(pitChoice, pits), player);
+			doHarvest.harvest(doSow.sow(pitChoice, pits), player);
 			showBoard(player, pits);
 			player.alternatePlayer();
 			
