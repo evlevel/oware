@@ -9,7 +9,9 @@ public class Move
 		
 		while(seedsToSow > 0)
 		{
-			pit.getNext().sowOneSeed(); //Here we start sowing from the next pit of chosen pit
+			
+			pitToSow = pitToSow.getNext();
+			pitToSow.sowOneSeed(); //Here we start sowing from the next pit of chosen pit
 			seedsToSow --;
 		}
 		
