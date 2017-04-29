@@ -1,12 +1,20 @@
 
 public class Move
 {
-	// return results from
-
-	public static void main(String[] args)
+	public Pit sow(int pitChoice, Pit[] pits)
 	{
-		// TODO Auto-generated method stub
-
+		
+		int seedsToSow = pits[pitChoice].getAllSeeds();
+		Pit pitToSow = pits[pitChoice];
+		
+		while(seedsToSow > 0)
+		{
+			pit.getNext().sowOneSeed(); //Here we start sowing from the next pit of chosen pit
+			seedsToSow --;
+		}
+		
+		Pit lastSowedPit = pitToSow; //For the sake of understanding why return a Pit object
+			
+		return lastSowedPit;
 	}
-
 }
