@@ -1,7 +1,7 @@
 
 public class Oware
 {
-	private static Player player;
+	private static Player player1, player2;
 	private static Pit[] pits;
 	private static Board board;
 	private static boolean haveWinner;
@@ -23,27 +23,42 @@ public class Oware
 		
 		System.out.println("            Oware Game 1.0");
 		System.out.println("-------------------------------------------\n");
-		showBoard(player, pits);
+		showBoard();
 		
 		while (!haveWinner)
 		{
-			int pitChoice = choices.choosePit(player, pits);
+			int pitChoice = choices.choosePit(player1, pits);
+			doHarvest.harvest(doSow.sow(pitChoice, pits), player1);
+			showBoard();
 			
-			doHarvest.harvest(doSow.sow(pitChoice, pits), player);
-			showBoard(player, pits);
-			player.alternatePlayer();
 			
-			/*
-			 * Insert here.
-			 */
+			System.out.println("---------");
+			System.out.println("Switch Player");
+			System.out.println("---------");
 			
-			if (player.getPlayerStorehouse() > 24 || player.getOpponentStorehouse() > 24)
+			
+			pitChoice = choices.choosePit(player2, pits);
+
+			doHarvest.harvest(doSow.sow(pitChoice, pits), player2);
+			showBoard();
+			
+			if (player1.getPlayerStorehouse() > 24)
+			{
+				System.out.println("-----------------------------");
+				System.out.println("       Player 1 WINS!");
+				System.out.println("-----------------------------");
 				haveWinner = true;
+			}
+			else if(player2.getPlayerStorehouse() > 24)
+			{
+				System.out.println("-----------------------------");
+				System.out.println("       Player 1 WINS!");
+				System.out.println("-----------------------------");
+				haveWinner = true;
+			}
 		}
 		
-		System.out.println("-----------------------------");
-		System.out.println("     We have a WINNER!");
-		System.out.println("-----------------------------");
+
 		System.out.println("Thank you for playing.");
 		
 		
@@ -51,7 +66,8 @@ public class Oware
 	
 	private static void initialize()
 	{
-		player = new Player();
+		player1 = new Player(1);
+		player2 = new Player(2);
 		board = new Board();
 		haveWinner = false;
 		choices = new InController();
@@ -59,17 +75,18 @@ public class Oware
 		doSow = new Move();
 	}
 	
-	public static void showBoard(Player p, Pit[] pits)
+	private static void showBoard()
 	{
 		System.out.println("       12    11   10   9    8    7");
 		System.out.print("       ");
 		for (int i = 11;i > 5; i-- )
 			System.out.print("(" + pits[i].getNumSeeds() + ")  ");
-		System.out.println("\n(" + p.getPlayerStorehouse() + ")" +"--------------------------------------" + "(" + p.getOpponentStorehouse() + ")");
+		System.out.println("\n(" + player1.getPlayerStorehouse() + ")" +"--------------------------------------" + "(" + player2.getPlayerStorehouse() + ")");
 		System.out.print("       ");
 		for (int i = 0;i < 6; i++ )
 			System.out.print("(" + pits[i].getNumSeeds() + ")  ");
 		System.out.println("\n        1    2    3    4    5    6");
 	}
+	
 
 }
