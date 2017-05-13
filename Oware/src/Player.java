@@ -1,46 +1,32 @@
-
-public class Player
+class Player
 {
-
 	private int playerStorehouse;
-	private int opponentStorehouse;
-	private boolean whichPlayer; // true for player, false for opponent.
+	private boolean side; // true for side 1 - 6, false for side 7 - 12
+
 	
-	public Player()
+	
+	public Player(int playerNumber)
 	{
-		playerStorehouse = 0;
-		opponentStorehouse = 0;
-		whichPlayer = true;
+		this.playerStorehouse = 0;
+		if (playerNumber == 1)
+			this.side = true;
+		else
+			this.side = false;
+
 	}
 	
 	public int getPlayerStorehouse()
 	{
-		return playerStorehouse;
+		return this.playerStorehouse;
 	}
 	
 	public void addSeedsToPlayerStorehouse(int s)
 	{
-		playerStorehouse += s;
+		this.playerStorehouse += s;
 	}
 	
-	public int getOpponentStorehouse()
+	public boolean getWhichSide()
 	{
-		return opponentStorehouse;
+		return this.side;
 	}
-	
-	public void addSeedsToOpponentStorehouse(int s)
-	{
-		opponentStorehouse += s;
-	}
-	
-	
-	public boolean getWhichPlayer()
-	{
-		return whichPlayer;
-	}
-	public void alternatePlayer()
-	{
-		whichPlayer = !whichPlayer;
-	}
-
 }
